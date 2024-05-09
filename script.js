@@ -597,7 +597,6 @@ function runGSapFooter() {
       start: '30% bottom',
       end: 'bottom bottom',
       scrub: 1,
-      markers: true,
     },
   })
 }
