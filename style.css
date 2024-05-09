@@ -1,0 +1,387 @@
+:root {
+    --color-primary: 185, 28, 77;
+    --color-secondary: 255, 102, 32;
+    --color-tertiary: 189, 255, 0;
+    --color-alert: 192, 0, 0;
+    --color-sucess: 74, 159, 83;
+    --color-border-1: 12, 12, 12;
+    --color-border-light-1: 255, 255, 255;
+    --bg: 255, 255, 255;
+    --bg-2nd: 238, 236, 230;
+    --bg-dark: 0, 0, 0;
+    --color-text-basic: 97, 97, 97;
+    --color-text-title: 0, 0, 0;
+
+    --ff-material: 'material icons';
+    --ff-material-outline: 'material icons outlined';
+    --ff-material-round: 'material icons round';
+
+    --size-ratio: 1.2;
+    --size-small: calc(1rem - 1px);
+    --size-small-a: calc(var(--size-small) - 1px);
+    --size-2: calc(1rem * var(--size-ratio) - 1px);
+    --size-3: calc(var(--size-2) * var(--size-ratio));
+    --size-4: calc(var(--size-3) * var(--size-ratio));
+    --size-5: calc(var(--size-4) * var(--size-ratio));
+    --size-6: calc(var(--size-5) * var(--size-ratio));
+
+
+    --btn-radius: 500px;
+
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+body .material-icons,
+body .material-icons-outlined,
+body .material-icons-round {
+    font-size: 1.2em;
+    vertical-align: text-bottom;
+}
+
+body p {
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* Header --- */
+.nav-item a {
+    position: relative;
+    display: block;
+    padding: 5px 0;
+}
+
+.nav-item a::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    transition: 420ms transform;
+    background-color: currentColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: 100% 0%;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.nav-item a:hover:before {
+    transform-origin: 0% 100%;
+    transform: scale(1);
+}
+
+/* UI - Btn simgple */
+.btn-simple {
+    background-color: var(--btn-bg);
+    color: var(--btn-text-color);
+    border: var(--btn-border);
+    padding: 8px 12px;
+    border-radius: var(--btn-radius);
+    font-size: 1rem;
+    line-height: 1.2;
+    transition: 320ms all;
+    cursor: pointer;
+    font-weight: 400;
+
+    --btn-bg: rgb(var(--bg-dark));
+    --btn-bg-hover: rgb(var(--color-tertiary));
+    --btn-text-color: whtite;
+    --btn-text-color-hover: rgb(var(--color-text-title));
+    --btn-border: 1px solid var(--btn-bg);
+    --btn-border-hover: 1px solid var(--btn-bg-hover);
+}
+
+.btn-simple:hover {
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-text-color-hover);
+    border: var(--btn-border-hover);
+}
+
+.btn-simple.dark {
+    --btn-bg: rgb(var(--bg-dark));
+    --btn-bg-hover: rgb(var(--color-tertiary));
+    --btn-text-color: white;
+    --btn-text-color-hover: rgb(var(--color-text-title));
+}
+
+.btn-simple.white.btn-outline {
+    --btn-bg: transparent;
+    --btn-bg-hover: rgb(var(--color-tertiary));
+    --btn-text-color: white;
+    --btn-text-color-hover: rgb(var(--color-text-title));
+    --btn-border: 1px solid white;
+    --btn-border-hover: 1px solid var(--btn-bg-hover);
+}
+
+/* Home - Hero ----- */
+.home-hero {
+    min-height: 100vh;
+    background-color: rgb(var(--color-primary));
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.home-hero .box {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(var(--color-secondary));
+    pointer-events: none;
+    transform: skewY(5deg);
+    position: absolute;
+}
+
+
+/* Home - About ---- */
+.home-about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 30;
+}
+
+.home-about .box {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    background-color: rgb(var(--color-secondary));
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    z-index: -5;
+}
+
+.home-about .box.second {
+    background-color: rgb(var(--bg-2nd));
+}
+
+/* Home - Well ----- */
+
+.home-well .box-imgs {
+    width: 180vw;
+}
+
+.home-well .box-imgs .img {
+    min-width: max-content;
+    width: fit-content;
+    margin-bottom: 100px;
+}
+
+.home-well .box-imgs img {
+    max-width: 460px;
+    max-height: 460px;
+}
+
+
+/* UI - Button two layer */
+.btn-two-layer {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 10px 10px 10px 30px;
+    border-radius: var(--btn-radius);
+    font-weight: 500;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    --btn-bg: rgb(var(--color-tertiary));
+    --btn-bg-hover: rgb(var(--bg-dark));
+    --btn-text: rgb(var(--color-text-title));
+    --btn-text-hover: white;
+}
+
+.btn-two-layer .btn-bg {
+    content: '';
+    display: block;
+    /* border-radius: var(--btn-radius); */
+    background-color: var(--btn-bg-hover);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+    transition: 320ms all;
+    transform: translate(-110%);
+}
+
+
+.btn-two-layer:hover .btn-bg {
+    transform: translateX(0%);
+}
+
+.btn-two-layer::before {
+    content: '';
+    display: block;
+    border-radius: var(--btn-radius);
+    background-color: var(--btn-bg-hover);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+    transition: 320ms all;
+    transform: translate(-110%);
+}
+
+
+.btn-two-layer:hover:before {
+    transform: translateX(0%);
+}
+
+.btn-two-layer:hover {
+    color: var(--btn-text-hover);
+}
+
+.btn-two-layer .text {
+    transition: 320ms all;
+}
+
+.btn-two-layer .icon {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    padding: 2px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+    font-size: 20px;
+    color: rgb(var(--color-text-title));
+
+    --bg-top: rgb(var(--color-primary));
+    --bg-bottom: rgb(var(--color-secondary));
+}
+
+.btn-two-layer .icon span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+/* Btn dark */
+.btn-two-layer.dark {
+    --btn-bg: rgb(var(--bg-dark));
+    --btn-bg-hover: rgb(var(--color-tertiary));
+    --btn-text: white;
+    --btn-text-hover: rgb(var(--color-text-title));
+}
+
+
+
+/* Home - Idea ----- */
+.home-idea {
+    --box-bg: rgb(var(--bg-2nd));
+    --box-radius: 20px;
+}
+
+.home-idea .box-bg {
+    background-color: var(--box-bg);
+    position: absolute;
+    z-index: -1;
+    width: 84%;
+    height: 100%;
+    border-radius: var(--box-radius);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-idea .box-content {
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    height: 50vh;
+}
+
+.home-idea .box-content::before,
+.home-idea .box-content::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, var(--box-bg), transparent 70%);
+}
+
+.home-idea .box-content::after {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, var(--box-bg), transparent 70%);
+}
+
+.home-idea p {
+    font-size: var(--size-3);
+    font-weight: 400;
+}
+
+/* Home - Trust ---- */
+
+.home-trust h2 {
+    color: rgb(var(--color-primary));
+}
+
+/* Btn - Line gradient ----- */
+.btn-line-gradiant {
+    display: inline-block;
+    box-sizing: content-box;
+    border-radius: var(--btn-radius);
+    background-image: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+    font-size: var(--size-2);
+    font-weight: 400;
+    color: rgb(var(--color-text-title));
+    padding: 2px;
+    transition: 340ms all;
+
+    --bg-top: rgb(var(--color-primary));
+    --bg-bottom: rgb(var(--color-secondary));
+}
+
+.btn-line-gradiant:hover {
+    color: rgb(var(--color-primary));
+}
+
+.btn-line-gradiant .content {
+    background-color: white;
+    padding: 20px 40px;
+    display: block;
+    border-radius: var(--btn-radius);
+}
+
+/* UI - Footer ----- */
+footer {}
+
+footer p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+footer a {
+    transition: 240ms opacity;
+    cursor: pointer;
+}
+
+footer a:hover {
+    opacity: 0.64;
+}
